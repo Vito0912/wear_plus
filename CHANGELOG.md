@@ -1,3 +1,7 @@
+# 1.2.4
+
+- Android compileSdkVersion 36
+
 # 1.2.3
 
 - Replaces deprecated native lifecycle observer methods (by [@Crdzbird](https://github.com/Crdzbird) in [#6](https://github.com/Rexios80/wear_plus/pull/6))
