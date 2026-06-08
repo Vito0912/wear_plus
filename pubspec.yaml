@@ -1,11 +1,11 @@
 name: wear_plus
 description: An actively maintained plugin that offers Flutter support for Wear OS by Google
-version: 1.2.4
+version: 1.2.5
 homepage: https://github.com/Rexios80/wear_plus
 
 environment:
-  sdk: ^3.0.0
-  flutter: ">=2.5.0"
+  sdk: ^3.12.0
+  flutter: ">=3.44.0"
 
 dependencies:
   flutter:

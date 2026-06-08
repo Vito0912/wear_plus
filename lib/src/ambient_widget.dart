@@ -11,11 +11,8 @@ enum WearMode {
 }
 
 /// Builds a child for [AmbientMode]
-typedef AmbientModeWidgetBuilder = Widget Function(
-  BuildContext context,
-  WearMode mode,
-  Widget? child,
-);
+typedef AmbientModeWidgetBuilder =
+    Widget Function(BuildContext context, WearMode mode, Widget? child);
 
 /// Widget that listens for when a Wear device enters full power or ambient mode,
 /// and provides this in a builder. It optionally takes an [onUpdate] function that's

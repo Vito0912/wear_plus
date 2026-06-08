@@ -11,21 +11,14 @@ enum WearShape {
 }
 
 /// Builds a child for a [WatchShape]
-typedef WatchShapeBuilder = Widget Function(
-  BuildContext context,
-  WearShape shape,
-  Widget? child,
-);
+typedef WatchShapeBuilder =
+    Widget Function(BuildContext context, WearShape shape, Widget? child);
 
 /// Builder widget for watch shapes
 @immutable
 class WatchShape extends StatefulWidget {
   /// Constructor
-  const WatchShape({
-    super.key,
-    required this.builder,
-    this.child,
-  });
+  const WatchShape({super.key, required this.builder, this.child});
 
   /// Built when the shape changes
   final WatchShapeBuilder builder;
@@ -77,10 +70,7 @@ class _WatchShapeState extends State<WatchShape> {
 
 class _InheritedShape extends InheritedWidget {
   /// Constructor
-  const _InheritedShape({
-    required this.shape,
-    required super.child,
-  });
+  const _InheritedShape({required this.shape, required super.child});
 
   final WearShape shape;
 
