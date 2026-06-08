@@ -32,8 +32,10 @@ class Wear {
     switch (call.method) {
       case 'onEnterAmbient':
         final args = (call.arguments as Map).cast<String, bool>();
-        final details =
-            AmbientDetails(args['burnInProtection']!, args['lowBitAmbient']!);
+        final details = AmbientDetails(
+          args['burnInProtection']!,
+          args['lowBitAmbient']!,
+        );
         _notifyAmbientCallbacks((callback) => callback.onEnterAmbient(details));
       case 'onExitAmbient':
         _notifyAmbientCallbacks((callback) => callback.onExitAmbient());
@@ -87,10 +89,9 @@ class Wear {
   ///
   Future<void> setAutoResumeEnabled(bool enabled) async {
     try {
-      await _channel.invokeMethod<String>(
-        'setAutoResumeEnabled',
-        {'enabled': enabled},
-      );
+      await _channel.invokeMethod<String>('setAutoResumeEnabled', {
+        'enabled': enabled,
+      });
     } on PlatformException catch (e, st) {
       debugPrint('Error calling setAutoResumeEnabled: $e\n$st');
       rethrow;
@@ -100,10 +101,9 @@ class Wear {
   /// Sets whether this activity is currently in a state that supports ambient offload mode.
   Future<void> setAmbientOffloadEnabled(bool enabled) async {
     try {
-      await _channel.invokeMethod<String>(
-        'setAmbientOffloadEnabled',
-        {'enabled': enabled},
-      );
+      await _channel.invokeMethod<String>('setAmbientOffloadEnabled', {
+        'enabled': enabled,
+      });
     } on PlatformException catch (e, st) {
       debugPrint('Error calling setAmbientOffloadEnabled: $e\n$st');
       rethrow;
